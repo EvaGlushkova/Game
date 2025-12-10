@@ -1,0 +1,11 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#include "CowCard.h"
+
+CowCard::CowCard() {
+    name = "Cow";
+    cost = 4;
+    income = 2;
+}

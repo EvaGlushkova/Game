@@ -1,0 +1,77 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+/**
+ * @file Deck.cpp
+ * @brief Implementation of Deck class
+ */
+
+#include "Deck.h"
+#include <algorithm>
+
+Deck::Deck() {
+    rng_.seed(time(0)); 
+}
+
+Deck::~Deck() {
+    for (int i = 0; i < deck_.size(); i++) {
+        delete deck_[i];
+    }
+    deck_.clear();
+}
+
+void Deck::initializeDeck() {
+    for (int i = 0; i < deck_.size(); i++) {
+        delete deck_[i];
+    }
+    deck_.clear();
+    
+    for (int i = 0; i < wheatCount; ++i) {
+        deck_.push_back(new WheatCard());
+    }
+    for (int i = 0; i < carrotCount; ++i) {
+        deck_.push_back(new CarrotCard());
+    }
+    for (int i = 0; i < tomatoCount; ++i) {
+        deck_.push_back(new TomatoCard());
+    }
+    for (int i = 0; i < potatoCount; ++i) {
+        deck_.push_back(new PotatoCard());
+    }
+    
+    for (int i = 0; i < chickenCount; ++i) {
+        deck_.push_back(new ChickenCard());
+    }
+    for (int i = 0; i < sheepCount; ++i) {
+        deck_.push_back(new SheepCard());
+    }
+    for (int i = 0; i < cowCount; ++i) {
+        deck_.push_back(new CowCard());
+    }
+    for (int i = 0; i < pigCount; ++i) {
+        deck_.push_back(new PigCard());
+    }
+}
+
+void Deck::shuffle() {
+    std::shuffle(deck_.begin(), deck_.end(), rng_);
+}
+
+Card* Deck::drawCard() {
+    if (deck_.empty()) {
+        return nullptr;
+    }
+    
+    Card* card = deck_.back();
+    deck_.pop_back();
+    return card;
+}
+
+int Deck::getCardCount() const 
+{ return deck_.size(); 
+}
+
+bool Deck::isEmpty() const {
+ return deck_.empty(); 
+}

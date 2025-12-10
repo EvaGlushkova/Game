@@ -1,0 +1,63 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+/**
+ * @file AnimalCard.h
+ * @brief Base class for all animal cards in the game
+ */
+
+#ifndef ANIMALCARD_H
+#define ANIMALCARD_H
+
+#include "Card.h"
+
+class AnimalCard : public Card {
+protected:
+    std::string name;  ///< Name of the animal
+    int cost;          ///< Coin cost to play the card
+    int income;        ///< Income generated per activation
+
+public:
+    /**
+     * @brief Default constructor
+     */
+    AnimalCard() = default;
+    
+    /**
+     * @brief Virtual destructor
+     */
+    ~AnimalCard() override = default;
+    
+    /**
+     * @brief Get the card type as "Animal"
+     * @return "Animal" string
+     */
+    std::string getType() const override;
+    
+    /**
+     * @brief Get the display name of the card
+     * @return Card name as string
+     */
+    std::string getName() const override;
+    
+    /**
+     * @brief Get the cost to play this card
+     * @return Cost in coins
+     */
+    int getCost() const override;
+    
+    /**
+     * @brief Get the base income value this card produces
+     * @return Income per activation in coins
+     */
+    int getIncome() const override;
+    
+    /**
+     * @brief Activate the card to generate income
+     * @return Actual coins generated this activation
+     */
+    int activateIncome() override;
+};
+
+#endif

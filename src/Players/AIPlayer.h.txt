@@ -1,0 +1,46 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#ifndef AIPLAYER_H
+#define AIPLAYER_H
+
+#include "Player.h"
+#include <string>
+
+/**
+ * @class AIPlayer
+ * @brief Base class for AI players
+ */
+class AIPlayer : public Player {
+protected:
+    std::string difficulty_;  ///< AI difficulty level
+    
+public:
+    /**
+     * @brief Constructor
+     * @param name Player name
+     * @param difficulty AI difficulty ("EASY", "MEDIUM")
+     */
+    AIPlayer(const std::string& name, const std::string& difficulty);
+    
+    /**
+     * @brief Get AI difficulty
+     * @return Difficulty string
+     */
+    std::string getDifficulty() const;
+    
+    /**
+     * @brief Get player type info
+     * @return String with player type and difficulty
+     */
+    std::string getPlayerInfo() const override;
+    
+     /**
+     * @brief Override chooseAction
+     */
+
+    std::string chooseAction() override = 0;
+};
+
+#endif 

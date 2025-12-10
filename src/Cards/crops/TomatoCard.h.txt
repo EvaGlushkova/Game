@@ -1,0 +1,27 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+/**
+ * @file TomatoCard.h
+ * @brief Tomato crop card - cost 3, income 2
+ */
+
+#ifndef TOMATOCARD_H
+#define TOMATOCARD_H
+
+#include "../core/CropCard.h"
+
+class TomatoCard : public CropCard {
+public:
+    /**
+     * @brief Constructor - sets Tomato card properties
+     */
+    TomatoCard();
+/**
+     * @brief Destructor
+     */
+    ~TomatoCard() override = default;
+};
+
+#endif

@@ -1,0 +1,50 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#include "EasyAIPlayer.h"
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+
+EasyAIPlayer::EasyAIPlayer(const std::string& name) 
+    : AIPlayer(name, "EASY") {
+}
+
+int EasyAIPlayer::chooseCardToPlay() {
+    std::cout << getName() << "'s Turn \n";
+    std::cout << getPlayerInfo() << "\n";
+    
+  
+    if (getHandSize() == 0) {
+        std::cout << "No cards, so passing\n";
+        return -1;
+    }
+    
+   
+    if (std::rand() % 100 < 75) {
+        for (int i = 0; i < getHandSize(); i++) {
+            Card* card = getCardFromHand(i);
+            
+            if (getCoins() >= card->getCost()) {
+ 
+                if (card->getType() == "Crop" && getField().canPlaceCrop()) {
+                    std::cout << "Playing: " << card->getName() << "\n";
+                    return i;  
+                }
+     
+                if (card->getType() == "Animal" && getField().canPlaceAnimal()) {
+                    std::cout << "Playing: " << card->getName() << "\n";
+                    return i; 
+                }
+            }
+        }
+    }
+    
+    std::cout << "Passing \n";
+    return -1;
+}
+
+std::string EasyAIPlayer::getPlayerInfo() const {
+    return "EasyAI " + Player::getPlayerInfo();
+}
