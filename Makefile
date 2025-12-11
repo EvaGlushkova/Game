@@ -11,10 +11,16 @@ all: $(TARGET)
 $(TARGET): $(TEST_FILE) $(SRC_FILES)
 	$(CXX) $(CXXFLAGS) $(TEST_FILE) $(SRC_FILES) $(GTEST_LIBS) -o $(TARGET)
 
+test: $(TARGET)
+	./$(TARGET)
+
+
 run: $(TARGET)
 	./$(TARGET)
 
 clean:
 	rm -f $(TARGET)
+	rm -f test-results.xml
+	rm -rf docs/doxygen/
 
-.PHONY: all run clean
+.PHONY: all test test-xml test-list format check-format docs run clean check
