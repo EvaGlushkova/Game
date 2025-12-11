@@ -1,0 +1,15 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#include "AnimalCard.h"
+
+std::string AnimalCard::getType() const { return "Animal"; }
+
+std::string AnimalCard::getName() const { return name; }
+
+int AnimalCard::getCost() const { return cost; }
+
+int AnimalCard::getIncome() const { return income; }
+
+int AnimalCard::activateIncome() { return income; }

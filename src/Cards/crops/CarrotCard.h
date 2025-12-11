@@ -1,0 +1,27 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+/**
+ * @file CarrotCard.h
+ * @brief Carrot crop card - cost 2, income 1
+ */
+
+#ifndef CARROTCARD_H
+#define CARROTCARD_H
+
+#include "../core/CropCard.h"
+
+class CarrotCard : public CropCard {
+public:
+  /**
+   * @brief Constructor - sets Carrot card properties
+   */
+  CarrotCard();
+  /**
+   * @brief Destructor
+   */
+  ~CarrotCard() override = default;
+};
+
+#endif

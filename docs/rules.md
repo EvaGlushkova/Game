@@ -1,0 +1,39 @@
+**Goal**: Collect 30 coins. The first player to reach 30 coins wins.
+
+You can place up to 5 crops and 5 animals on your farm.
+The common deck consists of 24 cards, these include Animal cards and Crop cards.
+
+At the start of the game, each player is dealt **1 random card** into their hand and receives **3 coins**. The maximum hand size is 7 cards.
+
+Player Turn:
+
+1) Collect Income: Collect income from all your Animals and Crops.
+
+2) Get Coin: Receive +1 coin for your turn.
+
+3) Check for Win: Check if the player has reached 30 coins.
+
+4) Perform 1 Mandatory Action:
+   * Plant a Crop
+   * Place an Animal
+   * Pass your turn
+
+**Crops**:
+
+* Wheat (4 cards) - Cost: 2 coins / Income: +1 coin each turn
+
+* Carrot (3 cards) - Cost: 2 coins / Income: +1 coin each turn
+
+* Tomato (3 cards) - Cost: 3 coins / Income: +2 coins each turn
+
+* Potato (2 cards) - Cost: 3 coins / Income: +2 coins each turn
+
+**Animals**:
+
+* Chickens (4 cards) - Cost: 3 coins / Income: +2 coins each turn
+
+* Sheep (3 cards) - Cost: 3 coins / Income: +2 coins each turn
+
+* Cows (3 cards) - Cost: 4 coins / Income: +2 coins each turn
+
+* Pigs (2 cards) - Cost: 5 coins / Income: +3 coins each turn

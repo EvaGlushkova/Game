@@ -1,0 +1,59 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+/**
+ * @file CropCard.h
+ * @brief Base class for all crop cards in the game
+ */
+
+#ifndef CROPCARD_H
+#define CROPCARD_H
+
+#include "Card.h"
+
+class CropCard : public Card {
+protected:
+  std::string name; ///< Name of the crop
+  int cost;         ///< Coin cost to play the card
+  int income;       ///< Income generated per activation
+
+public:
+  /**
+   * @brief Default constructor
+   */
+  CropCard() = default;
+
+  /**
+   * @brief Virtual destructor
+   */
+  ~CropCard() override = default;
+
+  std::string getType() const override;
+
+  /**
+   * @brief Get the display name of the card
+   * @return Card name as string
+   */
+  std::string getName() const override;
+
+  /**
+   * @brief Get the cost to play this card
+   * @return Cost in coins
+   */
+  int getCost() const override;
+
+  /**
+   * @brief Get the income value this card produces
+   * @return Income per activation in coins
+   */
+  int getIncome() const override;
+
+  /**
+   * @brief Activate the card to generate income
+   * @return Actual coins generated this activation
+   */
+  int activateIncome() override;
+};
+
+#endif

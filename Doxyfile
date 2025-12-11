@@ -1,0 +1,12 @@
+PROJECT_NAME = "Game"
+INPUT =                  src/Cards \
+                         src/Players \
+                         src/Deck \
+                         src/Game \
+                         src
+RECURSIVE = YES
+EXCLUDE                = cmake-build-debug \
+                         tests \
+                         docs
+GENERATE_HTML = YES
+GENERATE_LATEX = NO

@@ -1,14 +1,26 @@
 CXX = g++
-CXXFLAGS = -Wall -g
-TESTFLAGS = -lgtest -lgmock -pthread
+CXXFLAGS = -std=c++14 -I./src -pthread
+GTEST_LIBS = -lgtest -lgtest_main
 
-TEST_SRC = tests/test-game.cpp
-TEST_TARGET = test-game
+SRC_FILES = $(shell find src/ -name "*.cpp")
+TEST_FILE = tests/test-game.cpp
+TARGET = test-game
 
-all: test
+all: $(TARGET)
 
-test: $(TEST_SRC)
-	$(CXX) $(TEST_SRC) $(CXXFLAGS) -o $(TEST_TARGET) $(TESTFLAGS)
+$(TARGET): $(TEST_FILE) $(SRC_FILES)
+	$(CXX) $(CXXFLAGS) $(TEST_FILE) $(SRC_FILES) $(GTEST_LIBS) -o $(TARGET)
+
+test: $(TARGET)
+	./$(TARGET)
+
+
+run: $(TARGET)
+	./$(TARGET)
 
 clean:
-	rm -f $(TEST_TARGET)
+	rm -f $(TARGET)
+	rm -f test-results.xml
+	rm -rf docs/doxygen/
+
+.PHONY: all test test-xml test-list format check-format docs run clean check
