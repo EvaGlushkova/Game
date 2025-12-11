@@ -1,0 +1,47 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#ifndef GAME_H
+#define GAME_H
+
+#include "GameMode.h"
+#include "PlayerVsAIMode.h"
+#include "PlayerVsPlayerMode.h"
+
+/**
+ * @class Game
+ * @brief Main game class
+ */
+class Game {
+private:
+  GameMode *mode_; ///< Game mode
+  Deck deck_;      ///< Card deck
+  int turn_;       ///< Turn number
+  bool gameOver_;  ///< Flag
+
+public:
+  /**
+   * @brief Constructor
+   */
+  Game();
+
+  /**
+   * @brief Destructor
+   */
+  ~Game();
+
+  /**
+   * @brief Setup game
+   * @param mode Game mode
+   * @param difficulty AI difficulty
+   */
+  void setup(const std::string &mode, const std::string &difficulty = "EASY");
+
+  /**
+   * @brief Start game
+   */
+  void start();
+};
+
+#endif

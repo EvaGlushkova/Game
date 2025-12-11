@@ -1,0 +1,28 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#include "PlayerVsPlayerMode.h"
+
+#include <iostream>
+
+void PlayerVsPlayerMode::initialize(Deck &deck) {
+  player1_ = new HumanPlayer("Player 1");
+  player2_ = new HumanPlayer("Player 2");
+
+  if (deck.getCardCount() > 0) {
+    player1_->addCardToHand(deck.drawCard());
+  }
+  if (deck.getCardCount() > 0) {
+    player2_->addCardToHand(deck.drawCard());
+  }
+
+  player1_->addCoins(3);
+  player2_->addCoins(3);
+
+  std::cout << "Game Mode: Player vs Player\n";
+}
+
+std::string PlayerVsPlayerMode::getModeName() const {
+  return "Player vs Player";
+}

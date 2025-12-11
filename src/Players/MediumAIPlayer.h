@@ -1,0 +1,29 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#ifndef MEDIUM_AIPLAYER_H
+#define MEDIUM_AIPLAYER_H
+
+#include "AIPlayer.h"
+
+/**
+ * @class MediumAIPlayer
+ * @brief AI player with strategy
+ */
+class MediumAIPlayer : public AIPlayer {
+public:
+  /**
+   * @brief Constructor
+   * @param name Player name
+   */
+  MediumAIPlayer(const std::string &name = "MediumAI");
+
+  /**
+   * @brief AI chooses best available card
+   * @return Card index to play, or -1 to pass
+   */
+  int chooseCardToPlay() override;
+};
+
+#endif

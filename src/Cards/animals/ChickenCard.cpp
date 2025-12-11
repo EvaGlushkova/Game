@@ -1,0 +1,11 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#include "ChickenCard.h"
+
+ChickenCard::ChickenCard() {
+  name = "Chicken";
+  cost = 3;
+  income = 2;
+}

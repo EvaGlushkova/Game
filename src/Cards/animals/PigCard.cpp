@@ -1,0 +1,11 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#include "PigCard.h"
+
+PigCard::PigCard() {
+  name = "Pig";
+  cost = 5;
+  income = 3;
+}

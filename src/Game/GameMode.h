@@ -1,0 +1,86 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+#ifndef GAMEMODE_H
+#define GAMEMODE_H
+
+#include <memory>
+
+#include "../Deck/Deck.h"
+#include "../Players/AIPlayer.h"
+#include "../Players/EasyAIPlayer.h"
+#include "../Players/Field.h"
+#include "../Players/HumanPlayer.h"
+#include "../Players/MediumAIPlayer.h"
+#include "../Players/Player.h"
+
+/**
+ * @class GameMode
+ * @brief Base class for game modes
+ */
+
+class GameMode {
+protected:
+  Player *player1_;    ///< First player
+  Player *player2_;    ///< Second player
+  bool isPlayer1Turn_; ///< True if player1's turn
+
+public:
+  /**
+   * @brief Constructor
+   */
+  GameMode();
+
+  /**
+   * @brief Virtual destructor
+   */
+  virtual ~GameMode();
+
+  /**
+   * @brief Initialize players
+   * @param deck Game deck
+   */
+  virtual void initialize(Deck &deck) = 0;
+
+  /**
+   * @brief Switch to next player
+   */
+  void nextTurn();
+
+  /**
+   * @brief Check if any player won
+   * @return true if winner exists
+   */
+  bool hasWinner() const;
+
+  /**
+   * @brief Get winner
+   * @return Winning player or nullptr
+   */
+  Player *getWinner() const;
+
+  /**
+   * @brief Get player 1
+   */
+  Player *getPlayer1() const;
+
+  /**
+   * @brief Get player 2
+   */
+  Player *getPlayer2() const;
+
+  /**
+   * @brief Get current player
+   * @return Current player
+   */
+  Player *getCurrentPlayer() const;
+
+  /**
+   * @brief Get mode name
+   * @return Mode name
+   */
+  virtual std::string getModeName() const = 0;
+};
+
+#endif

@@ -1,0 +1,27 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+/**
+ * @file PigCard.h
+ * @brief Pig animal card - cost 5, income 3
+ */
+
+#ifndef PIGCARD_H
+#define PIGCARD_H
+
+#include "../core/AnimalCard.h"
+
+class PigCard : public AnimalCard {
+public:
+  /**
+   * @brief Constructor - sets Pig card properties
+   */
+  PigCard();
+  /**
+   * @brief Destructor
+   */
+  ~PigCard() override = default;
+};
+
+#endif

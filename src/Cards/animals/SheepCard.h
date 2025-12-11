@@ -1,0 +1,27 @@
+/*
+Glushkova Eva st108255@student.spbu.ru
+*/
+
+/**
+ * @file SheepCard.h
+ * @brief Sheep animal card - cost 3, income 2
+ */
+
+#ifndef SHEEPCARD_H
+#define SHEEPCARD_H
+
+#include "../core/AnimalCard.h"
+
+class SheepCard : public AnimalCard {
+public:
+  /**
+   * @brief Constructor - sets Sheep card properties
+   */
+  SheepCard();
+  /**
+   * @brief Destructor
+   */
+  ~SheepCard() override = default;
+};
+
+#endif

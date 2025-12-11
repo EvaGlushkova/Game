@@ -18,3 +18,4 @@ make test <br />
 ./test-game <br />
 
 ## Run
+./game.exe
